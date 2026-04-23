@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tamil Nadu Growth Report · 2025–2030</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202124;
+      --ink-2: #5f6368;
+      --paper: #ffffff;
+      --paper-dark: #f8f9fa;
+      --saffron: #e37400;
+      --rule: #e8eaed;
+      --rule-heavy: #dadce0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--paper);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 1rem;
+    }
+    .masthead-series {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.55;
+    }
+    .masthead-nav {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .masthead-nav a {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--rule-heavy);
+      padding: 0.3rem 0.6rem;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .masthead-nav a.active {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .masthead-nav a:hover:not(.active) { background: var(--paper-dark); }
+
+    .coming-soon {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 8rem 2rem 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--rule-heavy);
+      position: relative;
+      overflow: hidden;
+    }
+    .coming-soon::before {
+      content: "தமிழ்நாடு";
+      position: absolute;
+      top: -0.5rem;
+      right: -1rem;
+      font-size: clamp(4rem, 12vw, 10rem);
+      font-family: serif;
+      opacity: 0.04;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .coming-kicker {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--saffron);
+    }
+    .coming-soon h1 {
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+    .coming-soon h1 em {
+      font-style: normal;
+      color: var(--saffron);
+    }
+    .coming-note {
+      font-size: 1.05rem;
+      color: var(--ink-2);
+      max-width: 480px;
+      line-height: 1.7;
+      border-left: 3px solid var(--rule-heavy);
+      padding-left: 1.2rem;
+    }
+    .coming-year {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      opacity: 0.5;
+    }
+    @media (max-width: 600px) {
+      .coming-soon { padding: 4rem 1.5rem 3rem; }
+      .masthead { padding: 0.8rem 1.5rem; }
+      .masthead-series { display: none; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="masthead">
+  <span class="masthead-series">Tamil Nadu · Five-Year Growth Reports</span>
+  <nav class="masthead-nav">
+    <a href="index.html">2020–25</a>
+    <a href="tamilnadu-2025-2030.html" class="active">2025–30</a>
+    <a href="tamilnadu-2030-2035.html">2030–35</a>
+  </nav>
+</header>
+
+<section class="coming-soon">
+  <p class="coming-kicker">Five-Year Performance Report · Edition II</p>
+  <h1>Tamil Nadu<br/><em>2025 – 2030</em></h1>
+  <p class="coming-note">This edition will be published in 2030, covering economic, social, and progressive metrics for the 2025–2030 period.</p>
+  <span class="coming-year">Expected · 2030</span>
+</section>
+
+<footer>
+  <span>Tamil Nadu Growth Reports · First published April 2026</span>
+  <span>Data compiled from NITI Aayog, IBEF, IIPS, CAG &amp; Government of Tamil Nadu</span>
+  <span>Next edition: 2030</span>
+</footer>
+
+</body>
+</html>
