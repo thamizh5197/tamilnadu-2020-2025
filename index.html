@@ -146,6 +146,7 @@
       font-weight: 700;
       line-height: 1;
       margin-bottom: 0.3rem;
+      white-space: nowrap;
     }
     .hero-stat-value.up { color: var(--green); }
     .hero-stat-value.down { color: var(--red); }
@@ -221,25 +222,33 @@
     }
     .metric-values {
       display: flex;
-      align-items: baseline;
-      gap: 0.8rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
       margin-bottom: 0.5rem;
-      flex-wrap: wrap;
+    }
+    .metric-from {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
     .metric-then {
       font-family: 'Roboto', sans-serif;
-      font-size: 1.5rem;
+      font-size: 0.9rem;
       font-weight: 400;
-      opacity: 0.4;
+      opacity: 0.45;
+      white-space: nowrap;
     }
     .metric-arrow {
-      font-size: 0.9rem;
-      opacity: 0.3;
+      font-size: 0.75rem;
+      opacity: 0.35;
     }
     .metric-now {
       font-family: 'Roboto', sans-serif;
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
+      line-height: 1.1;
+      white-space: nowrap;
     }
     .metric-now.up   { color: var(--green); }
     .metric-now.down { color: var(--red);   }
@@ -446,8 +455,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">GSDP at Current Prices</div>
       <div class="metric-values">
-        <span class="metric-then">~₹16–17L Cr</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">~₹16–17L Cr</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">₹31.2L Cr</span>
       </div>
       <p class="metric-desc">Nominal GSDP nearly doubled in 5 years. The state grew at a CAGR of 11.84% between FY19 and FY26, with 2024–25 marking the first double-digit real growth in 14 years at 11.19% — the highest rate in India.</p>
@@ -457,8 +466,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">Merchandise Exports</div>
       <div class="metric-values">
-        <span class="metric-then">$26.15B</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">$26.15B</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">$52.07B</span>
       </div>
       <p class="metric-desc">Exports nearly doubled in 4 years (2020–21 to 2024–25). Tamil Nadu ranks #1 in electronics, textiles and leather exports, and #2 in engineering goods nationally.</p>
@@ -468,8 +477,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">FDI Inflows</div>
       <div class="metric-values">
-        <span class="metric-then">$2,169M</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">$2,169M</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">$3,681M</span>
       </div>
       <p class="metric-desc">FDI rose 70% from 2022–23 to 2024–25, defying the national trend of declining foreign investment. Cumulative FDI (Oct 2019–June 2025) reached US$17.29 billion.</p>
@@ -479,8 +488,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">Manufacturing Sector Growth</div>
       <div class="metric-values">
-        <span class="metric-then">Baseline</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">Baseline</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">+14.74%</span>
       </div>
       <p class="metric-desc">Manufacturing expanded at 14.74% in 2024–25 — more than 3× the national average of 4.5%. Over 4 years (2021–22 to 2024–25), TN recorded the highest average manufacturing growth in India at 9.38%.</p>
@@ -490,8 +499,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">Per Capita Income</div>
       <div class="metric-values">
-        <span class="metric-then">~₹2.1L</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">~₹2.1L</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">₹3.62L</span>
       </div>
       <p class="metric-desc">Per capita income is now 1.77× the national average of ₹2.05 lakh. 32 of 38 districts now exceed the all-India average individually — indicating broad-based gains.</p>
@@ -501,8 +510,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">Renewable Energy Capacity</div>
       <div class="metric-values">
-        <span class="metric-then">15,779 MW</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">15,779 MW</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">24,460 MW</span>
       </div>
       <p class="metric-desc">Renewable installed capacity grew ~55% over the period. By mid-2024, renewables crossed the 50% mark of total generation — with solar + wind now exceeding thermal in output share.</p>
@@ -512,8 +521,8 @@
     <div class="metric-card bad reveal">
       <div class="metric-title">Revenue Deficit</div>
       <div class="metric-values">
-        <span class="metric-then">Lower</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">Lower</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now down">₹45,121 Cr</span>
       </div>
       <p class="metric-desc">The revenue deficit worsened in 2023–24 — 71.5% above Medium-Term Fiscal Plan projections. The state targets eliminating the revenue deficit by 2025–26, but progress has been slow.</p>
@@ -523,8 +532,8 @@
     <div class="metric-card bad reveal">
       <div class="metric-title">Debt-to-GSDP Ratio</div>
       <div class="metric-values">
-        <span class="metric-then">24.35%</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">24.35%</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now warn">28%</span>
       </div>
       <p class="metric-desc">The ratio rose sharply during the pandemic (peaking at 28.83% in 2021–22) and stabilised at 28% in 2023–24. While improving, the Fiscal Deficit remains above the 3% FRBM ceiling at 3.32%.</p>
@@ -534,8 +543,8 @@
     <div class="metric-card bad reveal">
       <div class="metric-title">Avg. Retail Inflation vs India</div>
       <div class="metric-values">
-        <span class="metric-then">India avg 4.85%</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">India avg 4.85%</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now warn">TN avg 5.7%</span>
       </div>
       <p class="metric-desc">Between 2019–20 and 2023–24, TN's average inflation outpaced the national average by ~0.85 percentage points. The trend reversed in 2024–25 when TN inflation fell to 4.6%, closing the gap.</p>
@@ -559,8 +568,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">SDG India Index Score · NITI Aayog</div>
       <div class="metric-values">
-        <span class="metric-then">66 (2018)</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">66 (2018)</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">78 (2023–24)</span>
       </div>
       <p class="metric-desc">Tamil Nadu is 3rd in India (behind Uttarakhand and Kerala) with a score of 78, up from 74 in 2020–21. Classified as "Front Runner" in 13 of 17 UN Sustainable Development Goals. Tops the country in SDG Goal 1 (No Poverty).</p>
@@ -570,8 +579,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">Human Development Index (HDI)</div>
       <div class="metric-values">
-        <span class="metric-then">0.692 (2017–18)</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">0.692 (2017–18)</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">0.751 (2024)</span>
       </div>
       <p class="metric-desc">Ranks 3rd in India on HDI. Comfortably in "High Human Development" territory — well above India's national HDI of 0.685 in 2023. A long-run rise from 0.457 in 1993–94.</p>
@@ -581,8 +590,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">Higher Education Enrolment (GER)</div>
       <div class="metric-values">
-        <span class="metric-then">~44%</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">~44%</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">47%</span>
       </div>
       <p class="metric-desc">Tamil Nadu leads India in higher education Gross Enrolment Ratio — nearly double the national average of 28.4%. Literacy stands at 80.1% vs national 73%.</p>
@@ -592,8 +601,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">Unemployment Rate</div>
       <div class="metric-values">
-        <span class="metric-then">5.1% (2021–22)</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">5.1% (2021–22)</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">3.5% (2023–24)</span>
       </div>
       <p class="metric-desc">Unemployment fell 1.6 percentage points — faster than the national decline (from 4% to 3.2%). Labour Force Participation also rose from 71.5% to 72.1%, suggesting genuine job market expansion.</p>
@@ -603,8 +612,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">Multidimensional Poverty Rate</div>
       <div class="metric-values">
-        <span class="metric-then">~4%</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">~4%</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">1.43%</span>
       </div>
       <p class="metric-desc">One of the lowest multidimensional poverty rates in India. Over 81.87% of rural households now receive safe piped drinking water. Aadhaar coverage is at 97.94%.</p>
@@ -614,8 +623,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">Child Stunting (NFHS-4 → NFHS-5)</div>
       <div class="metric-values">
-        <span class="metric-then">27%</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">27%</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">25%</span>
       </div>
       <p class="metric-desc">Stunting reduced from 27% to 25% and wasting dropped sharply from 20% to 15% — among the strongest improvements nationally. This reflects gains in maternal nutrition and early child health programs.</p>
@@ -625,8 +634,8 @@
     <div class="metric-card good reveal">
       <div class="metric-title">Maternal Mortality Ratio (MMR)</div>
       <div class="metric-values">
-        <span class="metric-then">97 (2007–09)</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">97 (2007–09)</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now up">60</span>
       </div>
       <p class="metric-desc">Tamil Nadu has already surpassed the UN SDG target of MMR below 70 per 100,000 live births. 88.1% of women received 4+ antenatal care visits. Near-universal (≈100%) institutional deliveries.</p>
@@ -636,8 +645,8 @@
     <div class="metric-card bad reveal">
       <div class="metric-title">Women's Anaemia Prevalence</div>
       <div class="metric-values">
-        <span class="metric-then">~55%</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">~55%</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now warn">53.4%</span>
       </div>
       <p class="metric-desc">Over half of women aged 15–49 remain anaemic. Child anaemia stands at 57%. While TN bucked the national worsening trend (prevalence declined slightly vs NFHS-4), the absolute level remains a major public health challenge.</p>
@@ -647,8 +656,8 @@
     <div class="metric-card bad reveal">
       <div class="metric-title">C-Section Rate</div>
       <div class="metric-values">
-        <span class="metric-then">WHO limit: 10–15%</span>
-        <span class="metric-arrow">→</span>
+        <div class="metric-from"><span class="metric-then">WHO limit: 10–15%</span>
+        <span class="metric-arrow">→</span></div>
         <span class="metric-now down">44.3%</span>
       </div>
       <p class="metric-desc">While near-universal institutional delivery is a success, C-section rates at 44.3% are nearly 3× the WHO-recommended ceiling. 52.2% of these are in private facilities, raising questions about over-medicalisation.</p>
