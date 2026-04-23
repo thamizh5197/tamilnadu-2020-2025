@@ -218,8 +218,26 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       opacity: 0.55;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.2rem;
     }
+    .metric-explain {
+      font-size: 0.78rem;
+      color: var(--ink-2);
+      line-height: 1.4;
+      margin-bottom: 0.7rem;
+      opacity: 0.8;
+    }
+    .metric-delta {
+      display: inline-block;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      margin-top: 0.3rem;
+    }
+    .metric-delta.bad  { background: var(--red-pale);     color: var(--red); }
+    .metric-delta.warn { background: var(--saffron-pale); color: var(--saffron); }
     .metric-values {
       display: flex;
       flex-direction: column;
@@ -454,6 +472,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">GSDP at Current Prices</div>
+      <div class="metric-explain">Total value of all goods &amp; services produced in Tamil Nadu in a year</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">~₹16–17L Cr</span>
         <span class="metric-arrow">→</span></div>
@@ -465,6 +484,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">Merchandise Exports</div>
+      <div class="metric-explain">Value of physical goods sold by TN companies to other countries</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">$26.15B</span>
         <span class="metric-arrow">→</span></div>
@@ -476,6 +496,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">FDI Inflows</div>
+      <div class="metric-explain">Money invested into TN directly by foreign companies &amp; individuals</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">$2,169M</span>
         <span class="metric-arrow">→</span></div>
@@ -487,6 +508,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">Manufacturing Sector Growth</div>
+      <div class="metric-explain">How fast TN's factories and production output are expanding year-on-year</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">Baseline</span>
         <span class="metric-arrow">→</span></div>
@@ -498,6 +520,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">Per Capita Income</div>
+      <div class="metric-explain">Average annual income earned per person in the state</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">~₹2.1L</span>
         <span class="metric-arrow">→</span></div>
@@ -509,6 +532,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">Renewable Energy Capacity</div>
+      <div class="metric-explain">Maximum power generatable from solar, wind &amp; other clean sources</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">15,779 MW</span>
         <span class="metric-arrow">→</span></div>
@@ -520,17 +544,20 @@
 
     <div class="metric-card bad reveal">
       <div class="metric-title">Revenue Deficit</div>
+      <div class="metric-explain">Govt spends more on day-to-day operations than it earns — the gap between them</div>
       <div class="metric-values">
-        <div class="metric-from"><span class="metric-then">Lower</span>
+        <div class="metric-from"><span class="metric-then">~₹20,000 Cr (2019–20)</span>
         <span class="metric-arrow">→</span></div>
         <span class="metric-now down">₹45,121 Cr</span>
+        <span class="metric-delta bad">↑ ~125% worse · 71.5% above fiscal plan</span>
       </div>
-      <p class="metric-desc">The revenue deficit worsened in 2023–24 — 71.5% above Medium-Term Fiscal Plan projections. The state targets eliminating the revenue deficit by 2025–26, but progress has been slow.</p>
+      <p class="metric-desc">Revenue deficit roughly doubled over the five years, and in 2023–24 it came in 71.5% above the state's own Medium-Term Fiscal Plan target. The government aimed to eliminate the deficit by 2025–26, but progress has been slow.</p>
       <div class="metric-source">Source: <a href="https://www.usthadian.com/tamil-nadu-debt-and-fiscal-trends-2025/" target="_blank">CAG Report via Usthadian Academy</a></div>
     </div>
 
     <div class="metric-card bad reveal">
       <div class="metric-title">Debt-to-GSDP Ratio</div>
+      <div class="metric-explain">Total govt debt as a share of the entire state economy — the lower the better</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">24.35%</span>
         <span class="metric-arrow">→</span></div>
@@ -542,6 +569,7 @@
 
     <div class="metric-card bad reveal">
       <div class="metric-title">Avg. Retail Inflation vs India</div>
+      <div class="metric-explain">How fast everyday prices rose in TN compared to the rest of India</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">India avg 4.85%</span>
         <span class="metric-arrow">→</span></div>
@@ -567,6 +595,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">SDG India Index Score · NITI Aayog</div>
+      <div class="metric-explain">UN benchmark score tracking 17 goals — poverty, health, education, climate, etc.</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">66 (2018)</span>
         <span class="metric-arrow">→</span></div>
@@ -578,6 +607,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">Human Development Index (HDI)</div>
+      <div class="metric-explain">Combined score measuring income, education, and life expectancy of people</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">0.692 (2017–18)</span>
         <span class="metric-arrow">→</span></div>
@@ -589,6 +619,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">Higher Education Enrolment (GER)</div>
+      <div class="metric-explain">Share of 18–23 year olds actually enrolled in college or university</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">~44%</span>
         <span class="metric-arrow">→</span></div>
@@ -600,6 +631,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">Unemployment Rate</div>
+      <div class="metric-explain">Share of working-age people actively looking for a job but unable to find one</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">5.1% (2021–22)</span>
         <span class="metric-arrow">→</span></div>
@@ -611,6 +643,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">Multidimensional Poverty Rate</div>
+      <div class="metric-explain">Share of people lacking basic needs like food, health &amp; education — beyond just income</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">~4%</span>
         <span class="metric-arrow">→</span></div>
@@ -622,6 +655,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">Child Stunting (NFHS-4 → NFHS-5)</div>
+      <div class="metric-explain">Share of under-5 children too short for their age — a sign of chronic malnutrition</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">27%</span>
         <span class="metric-arrow">→</span></div>
@@ -633,6 +667,7 @@
 
     <div class="metric-card good reveal">
       <div class="metric-title">Maternal Mortality Ratio (MMR)</div>
+      <div class="metric-explain">Number of mothers who die per 100,000 live births — lower is better</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">97 (2007–09)</span>
         <span class="metric-arrow">→</span></div>
@@ -644,6 +679,7 @@
 
     <div class="metric-card bad reveal">
       <div class="metric-title">Women's Anaemia Prevalence</div>
+      <div class="metric-explain">Share of women with low iron levels in blood — causes fatigue, complications in pregnancy</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">~55%</span>
         <span class="metric-arrow">→</span></div>
@@ -655,6 +691,7 @@
 
     <div class="metric-card bad reveal">
       <div class="metric-title">C-Section Rate</div>
+      <div class="metric-explain">Share of births by surgical operation — WHO recommends no more than 10–15%</div>
       <div class="metric-values">
         <div class="metric-from"><span class="metric-then">WHO limit: 10–15%</span>
         <span class="metric-arrow">→</span></div>
