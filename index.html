@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tamil Nadu Growth Report · 2020–2025</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202124;
+      --ink-2: #5f6368;
+      --paper: #ffffff;
+      --paper-dark: #f8f9fa;
+      --saffron: #e37400;
+      --saffron-pale: #fef7e0;
+      --green: #137333;
+      --green-pale: #e6f4ea;
+      --red: #c5221f;
+      --red-pale: #fce8e6;
+      --rule: #e8eaed;
+      --rule-heavy: #dadce0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--paper);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 1rem;
+    }
+    .masthead-series {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.55;
+    }
+    .masthead-nav {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .masthead-nav a {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--rule-heavy);
+      padding: 0.3rem 0.6rem;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .masthead-nav a.active {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .masthead-nav a:hover:not(.active) { background: var(--paper-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      border-bottom: 1px solid var(--rule-heavy);
+      padding: 5rem 2rem 4rem;
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "தமிழ்நாடு";
+      position: absolute;
+      top: -0.5rem;
+      right: -1rem;
+      font-size: clamp(4rem, 12vw, 10rem);
+      font-family: serif;
+      opacity: 0.04;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero-kicker {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--saffron);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--ink-2);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule-heavy);
+    }
+    .hero-stat {
+      flex: 1 1 160px;
+      border-right: 1px solid var(--rule-heavy);
+      border-bottom: 1px solid var(--rule-heavy);
+      padding: 1.2rem 1.5rem;
+    }
+    .hero-stat-value {
+      font-family: 'Roboto', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .hero-stat-value.up { color: var(--green); }
+    .hero-stat-value.down { color: var(--red); }
+    .hero-stat-label {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.55;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin: 3.5rem 0 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--rule-heavy);
+    }
+    .section-header h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .section-badge {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+    }
+    .badge-green { background: var(--green-pale); color: var(--green); }
+    .badge-red   { background: var(--red-pale);   color: var(--red);   }
+    .badge-neutral { background: var(--paper-dark); color: var(--ink-2); }
+
+    /* ── METRIC CARDS ── */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+      margin-bottom: 2rem;
+    }
+    .metric-card {
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 1.4rem 1.5rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .metric-card:hover { background: var(--paper-dark); }
+    .metric-card.good  { border-top: 3px solid var(--green); }
+    .metric-card.bad   { border-top: 3px solid var(--red); }
+    .metric-card.mixed { border-top: 3px solid var(--saffron); }
+
+    .metric-title {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 0.6rem;
+    }
+    .metric-values {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .metric-then {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      opacity: 0.4;
+    }
+    .metric-arrow {
+      font-size: 0.9rem;
+      opacity: 0.3;
+    }
+    .metric-now {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .metric-now.up   { color: var(--green); }
+    .metric-now.down { color: var(--red);   }
+    .metric-now.warn { color: var(--saffron); }
+
+    .metric-desc {
+      font-size: 0.83rem;
+      line-height: 1.55;
+      color: var(--ink-2);
+    }
+    .metric-source {
+      margin-top: 0.8rem;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.57rem;
+      letter-spacing: 0.08em;
+      opacity: 0.4;
+    }
+    .metric-source a { color: inherit; text-decoration: underline; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      border-left: 4px solid var(--saffron);
+      background: var(--saffron-pale);
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+    .callout strong { font-weight: 500; }
+    .callout.warn { border-color: var(--red); background: var(--red-pale); }
+    .callout.good { border-color: var(--green); background: var(--green-pale); }
+
+    /* ── COMPARISON TABLE ── */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .comparison-table th {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: left;
+      border-bottom: 2px solid var(--rule-heavy);
+      padding: 0.6rem 0.8rem;
+      white-space: nowrap;
+    }
+    .comparison-table td {
+      padding: 0.75rem 0.8rem;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    .comparison-table tr:hover td { background: var(--paper-dark); }
+    .comparison-table td:first-child { font-weight: 500; }
+    .tag-up, .tag-down, .tag-warn {
+      display: inline-block;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .tag-up   { background: var(--green-pale); color: var(--green); }
+    .tag-down { background: var(--red-pale);   color: var(--red);   }
+    .tag-warn { background: var(--saffron-pale); color: var(--saffron); }
+
+    /* ── SOURCES ── */
+    .sources-section {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--paper-dark);
+      border-top: 1px solid var(--rule);
+    }
+    .sources-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .sources-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.4rem 1.5rem;
+    }
+    .sources-list li {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.62rem;
+      line-height: 1.5;
+      opacity: 0.65;
+      padding-left: 0.8rem;
+      border-left: 2px solid var(--rule);
+    }
+    .sources-list li a { color: inherit; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      opacity: 0.5;
+    }
+
+    /* ── ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── PROGRESS BAR ── */
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: var(--saffron);
+      z-index: 200;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 3rem 1.5rem 2.5rem; }
+      .container { padding: 0 1.5rem; }
+      .masthead { padding: 0.8rem 1.5rem; }
+      .hero-stats { flex-direction: column; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .sources-list { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      .masthead-series { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <span class="masthead-series">Tamil Nadu · Five-Year Growth Reports</span>
+  <nav class="masthead-nav">
+    <a href="tamilnadu-2020-2025.html" class="active">2020–25</a>
+    <a href="tamilnadu-2025-2030.html" title="Coming 2030">2025–30</a>
+    <a href="tamilnadu-2030-2035.html" title="Coming 2035">2030–35</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-kicker">Five-Year Performance Report · Edition I</p>
+  <h1>Tamil Nadu<br/><em>2020 – 2025</em></h1>
+  <p class="hero-sub">A detailed scorecard across economic, social, and progressive metrics — tracking the state's performance against its own past, with sources.</p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-value up">₹31.2L Cr</div>
+      <div class="hero-stat-label">GSDP 2024–25</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value up">11.19%</div>
+      <div class="hero-stat-label">Real GSDP growth · highest in India</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value up">$52B</div>
+      <div class="hero-stat-label">Exports · up from $26B in 2020–21</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value up">78</div>
+      <div class="hero-stat-label">SDG Index Score · 3rd in India</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value down">₹45,121Cr</div>
+      <div class="hero-stat-label">Revenue deficit · worsened</div>
+    </div>
+  </div>
+</section>
+
+<!-- ECONOMIC SECTION -->
+<main class="container">
+
+  <div class="section-header reveal">
+    <h2>Economic Metrics</h2>
+    <span class="section-badge badge-green">Mostly Strong</span>
+  </div>
+
+  <div class="metrics-grid">
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">GSDP at Current Prices</div>
+      <div class="metric-values">
+        <span class="metric-then">~₹16–17L Cr</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">₹31.2L Cr</span>
+      </div>
+      <p class="metric-desc">Nominal GSDP nearly doubled in 5 years. The state grew at a CAGR of 11.84% between FY19 and FY26, with 2024–25 marking the first double-digit real growth in 14 years at 11.19% — the highest rate in India.</p>
+      <div class="metric-source">Source: <a href="https://statisticstimes.com/economy/india/tamil-nadu-economy.php" target="_blank">StatisticsTimes</a> · <a href="https://www.ibef.org/states/tamil-nadu-presentation" target="_blank">IBEF Tamil Nadu</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">Merchandise Exports</div>
+      <div class="metric-values">
+        <span class="metric-then">$26.15B</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">$52.07B</span>
+      </div>
+      <p class="metric-desc">Exports nearly doubled in 4 years (2020–21 to 2024–25). Tamil Nadu ranks #1 in electronics, textiles and leather exports, and #2 in engineering goods nationally.</p>
+      <div class="metric-source">Source: <a href="https://thefederal.com/category/states/south/tamil-nadu/tamil-nadu-economic-survey-decade-high-growth-2024-256-230255" target="_blank">TN Economic Survey 2024–25, The Federal</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">FDI Inflows</div>
+      <div class="metric-values">
+        <span class="metric-then">$2,169M</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">$3,681M</span>
+      </div>
+      <p class="metric-desc">FDI rose 70% from 2022–23 to 2024–25, defying the national trend of declining foreign investment. Cumulative FDI (Oct 2019–June 2025) reached US$17.29 billion.</p>
+      <div class="metric-source">Source: <a href="https://www.ibef.org/states/tamil-nadu" target="_blank">IBEF · DPIIT data</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">Manufacturing Sector Growth</div>
+      <div class="metric-values">
+        <span class="metric-then">Baseline</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">+14.74%</span>
+      </div>
+      <p class="metric-desc">Manufacturing expanded at 14.74% in 2024–25 — more than 3× the national average of 4.5%. Over 4 years (2021–22 to 2024–25), TN recorded the highest average manufacturing growth in India at 9.38%.</p>
+      <div class="metric-source">Source: <a href="https://thefederal.com/category/states/south/tamil-nadu/tamil-nadu-economic-survey-decade-high-growth-2024-256-230255" target="_blank">TN Economic Survey 2024–25</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">Per Capita Income</div>
+      <div class="metric-values">
+        <span class="metric-then">~₹2.1L</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">₹3.62L</span>
+      </div>
+      <p class="metric-desc">Per capita income is now 1.77× the national average of ₹2.05 lakh. 32 of 38 districts now exceed the all-India average individually — indicating broad-based gains.</p>
+      <div class="metric-source">Source: <a href="https://thefederal.com/category/states/south/tamil-nadu/tamil-nadu-economic-survey-decade-high-growth-2024-256-230255" target="_blank">TN Economic Survey 2024–25</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">Renewable Energy Capacity</div>
+      <div class="metric-values">
+        <span class="metric-then">15,779 MW</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">24,460 MW</span>
+      </div>
+      <p class="metric-desc">Renewable installed capacity grew ~55% over the period. By mid-2024, renewables crossed the 50% mark of total generation — with solar + wind now exceeding thermal in output share.</p>
+      <div class="metric-source">Source: <a href="http://tnenvis.nic.in/Database/Energy_1170.aspx" target="_blank">TNENVIS / IBEF FY26</a></div>
+    </div>
+
+    <div class="metric-card bad reveal">
+      <div class="metric-title">Revenue Deficit</div>
+      <div class="metric-values">
+        <span class="metric-then">Lower</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now down">₹45,121 Cr</span>
+      </div>
+      <p class="metric-desc">The revenue deficit worsened in 2023–24 — 71.5% above Medium-Term Fiscal Plan projections. The state targets eliminating the revenue deficit by 2025–26, but progress has been slow.</p>
+      <div class="metric-source">Source: <a href="https://www.usthadian.com/tamil-nadu-debt-and-fiscal-trends-2025/" target="_blank">CAG Report via Usthadian Academy</a></div>
+    </div>
+
+    <div class="metric-card bad reveal">
+      <div class="metric-title">Debt-to-GSDP Ratio</div>
+      <div class="metric-values">
+        <span class="metric-then">24.35%</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now warn">28%</span>
+      </div>
+      <p class="metric-desc">The ratio rose sharply during the pandemic (peaking at 28.83% in 2021–22) and stabilised at 28% in 2023–24. While improving, the Fiscal Deficit remains above the 3% FRBM ceiling at 3.32%.</p>
+      <div class="metric-source">Source: <a href="https://www.usthadian.com/tamil-nadu-debt-and-fiscal-trends-2025/" target="_blank">CAG Report · NITI Aayog State Fiscal Landscape</a></div>
+    </div>
+
+    <div class="metric-card bad reveal">
+      <div class="metric-title">Avg. Retail Inflation vs India</div>
+      <div class="metric-values">
+        <span class="metric-then">India avg 4.85%</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now warn">TN avg 5.7%</span>
+      </div>
+      <p class="metric-desc">Between 2019–20 and 2023–24, TN's average inflation outpaced the national average by ~0.85 percentage points. The trend reversed in 2024–25 when TN inflation fell to 4.6%, closing the gap.</p>
+      <div class="metric-source">Source: <a href="https://www.tnpscthervupettagam.com/articles-detail/economic-survey-of-tamil-nadu-2024-25" target="_blank">TN Economic Survey 2024–25</a></div>
+    </div>
+
+  </div>
+
+  <div class="callout good reveal">
+    <strong>Headline takeaway:</strong> Tamil Nadu's economic engine accelerated strongly over this period — exports doubled, manufacturing surged, and FDI bucked national trends. The state's 2024–25 real growth rate of 11.19% was the first double-digit figure in 14 years and the highest in India. The persistent drag is fiscal: revenue deficits and debt levels remain above targets.
+  </div>
+
+  <!-- PROGRESSIVE SECTION -->
+  <div class="section-header reveal">
+    <h2>Progressive &amp; Social Metrics</h2>
+    <span class="section-badge badge-neutral">Mixed Picture</span>
+  </div>
+
+  <div class="metrics-grid">
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">SDG India Index Score · NITI Aayog</div>
+      <div class="metric-values">
+        <span class="metric-then">66 (2018)</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">78 (2023–24)</span>
+      </div>
+      <p class="metric-desc">Tamil Nadu is 3rd in India (behind Uttarakhand and Kerala) with a score of 78, up from 74 in 2020–21. Classified as "Front Runner" in 13 of 17 UN Sustainable Development Goals. Tops the country in SDG Goal 1 (No Poverty).</p>
+      <div class="metric-source">Source: <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2032859" target="_blank">NITI Aayog SDG India Index 2023–24</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">Human Development Index (HDI)</div>
+      <div class="metric-values">
+        <span class="metric-then">0.692 (2017–18)</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">0.751 (2024)</span>
+      </div>
+      <p class="metric-desc">Ranks 3rd in India on HDI. Comfortably in "High Human Development" territory — well above India's national HDI of 0.685 in 2023. A long-run rise from 0.457 in 1993–94.</p>
+      <div class="metric-source">Source: <a href="https://en.wikipedia.org/wiki/List_of_districts_in_Tamil_Nadu_by_Human_Development_Index" target="_blank">Wikipedia · TN State Planning Commission</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">Higher Education Enrolment (GER)</div>
+      <div class="metric-values">
+        <span class="metric-then">~44%</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">47%</span>
+      </div>
+      <p class="metric-desc">Tamil Nadu leads India in higher education Gross Enrolment Ratio — nearly double the national average of 28.4%. Literacy stands at 80.1% vs national 73%.</p>
+      <div class="metric-source">Source: <a href="https://thefederal.com/category/states/south/tamil-nadu/tamil-nadu-economic-survey-decade-high-growth-2024-256-230255" target="_blank">TN Economic Survey 2024–25</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">Unemployment Rate</div>
+      <div class="metric-values">
+        <span class="metric-then">5.1% (2021–22)</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">3.5% (2023–24)</span>
+      </div>
+      <p class="metric-desc">Unemployment fell 1.6 percentage points — faster than the national decline (from 4% to 3.2%). Labour Force Participation also rose from 71.5% to 72.1%, suggesting genuine job market expansion.</p>
+      <div class="metric-source">Source: <a href="https://thefederal.com/category/states/south/tamil-nadu/tamil-nadu-economic-survey-decade-high-growth-2024-256-230255" target="_blank">TN Economic Survey 2024–25</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">Multidimensional Poverty Rate</div>
+      <div class="metric-values">
+        <span class="metric-then">~4%</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">1.43%</span>
+      </div>
+      <p class="metric-desc">One of the lowest multidimensional poverty rates in India. Over 81.87% of rural households now receive safe piped drinking water. Aadhaar coverage is at 97.94%.</p>
+      <div class="metric-source">Source: <a href="https://thefederal.com/category/states/south/tamil-nadu/tamil-nadu-economic-survey-decade-high-growth-2024-256-230255" target="_blank">TN Economic Survey · NITI Aayog</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">Child Stunting (NFHS-4 → NFHS-5)</div>
+      <div class="metric-values">
+        <span class="metric-then">27%</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">25%</span>
+      </div>
+      <p class="metric-desc">Stunting reduced from 27% to 25% and wasting dropped sharply from 20% to 15% — among the strongest improvements nationally. This reflects gains in maternal nutrition and early child health programs.</p>
+      <div class="metric-source">Source: <a href="https://ruralindiaonline.org/en/library/resource/national-family-health-survey-nfhs-5-2019-21-tamil-nadu/" target="_blank">NFHS-5 Tamil Nadu (2019–21), IIPS</a></div>
+    </div>
+
+    <div class="metric-card good reveal">
+      <div class="metric-title">Maternal Mortality Ratio (MMR)</div>
+      <div class="metric-values">
+        <span class="metric-then">97 (2007–09)</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now up">60</span>
+      </div>
+      <p class="metric-desc">Tamil Nadu has already surpassed the UN SDG target of MMR below 70 per 100,000 live births. 88.1% of women received 4+ antenatal care visits. Near-universal (≈100%) institutional deliveries.</p>
+      <div class="metric-source">Source: <a href="https://www.tnpscthervupettagam.com/articles-detail/national-family-health-survey-2019-21-on-tamilnadu-nfhs-5-part-01" target="_blank">NFHS-5 Tamil Nadu · SRS Bulletin</a></div>
+    </div>
+
+    <div class="metric-card bad reveal">
+      <div class="metric-title">Women's Anaemia Prevalence</div>
+      <div class="metric-values">
+        <span class="metric-then">~55%</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now warn">53.4%</span>
+      </div>
+      <p class="metric-desc">Over half of women aged 15–49 remain anaemic. Child anaemia stands at 57%. While TN bucked the national worsening trend (prevalence declined slightly vs NFHS-4), the absolute level remains a major public health challenge.</p>
+      <div class="metric-source">Source: <a href="https://ruralindiaonline.org/en/library/resource/national-family-health-survey-nfhs-5-2019-21-tamil-nadu/" target="_blank">NFHS-5 Tamil Nadu (2019–21)</a></div>
+    </div>
+
+    <div class="metric-card bad reveal">
+      <div class="metric-title">C-Section Rate</div>
+      <div class="metric-values">
+        <span class="metric-then">WHO limit: 10–15%</span>
+        <span class="metric-arrow">→</span>
+        <span class="metric-now down">44.3%</span>
+      </div>
+      <p class="metric-desc">While near-universal institutional delivery is a success, C-section rates at 44.3% are nearly 3× the WHO-recommended ceiling. 52.2% of these are in private facilities, raising questions about over-medicalisation.</p>
+      <div class="metric-source">Source: <a href="https://www.tnpscthervupettagam.com/articles-detail/national-family-health-survey-2019-21-on-tamilnadu-nfhs-5-part-01" target="_blank">NFHS-5 Tamil Nadu · WHO guidelines</a></div>
+    </div>
+
+  </div>
+
+  <div class="callout reveal">
+    <strong>Social progress summary:</strong> Tamil Nadu punches well above its weight on most human development indicators — HDI, SDG ranking, education enrolment, poverty reduction. The state's maternal and child health story is broadly positive. But anaemia remains a stubborn problem affecting over half of women, and the high C-section rate is a structural concern in healthcare delivery quality.
+  </div>
+
+  <!-- SUMMARY TABLE -->
+  <div class="section-header reveal">
+    <h2>Full Scorecard</h2>
+    <span class="section-badge badge-neutral">2020 → 2025</span>
+  </div>
+
+  <table class="comparison-table reveal">
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>~2019–20</th>
+        <th>~2024–25</th>
+        <th>Trend</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>GSDP (₹ lakh crore)</td><td>~₹16–17L Cr</td><td>₹31.19L Cr</td><td><span class="tag-up">↑ ~2×</span></td></tr>
+      <tr><td>Real GSDP Growth Rate</td><td>~5–6%</td><td>11.19%</td><td><span class="tag-up">↑ Highest in India</span></td></tr>
+      <tr><td>Exports (USD billion)</td><td>$26.15B</td><td>$52.07B</td><td><span class="tag-up">↑ Doubled</span></td></tr>
+      <tr><td>FDI (USD million)</td><td>$2,169M</td><td>$3,681M</td><td><span class="tag-up">↑ +70%</span></td></tr>
+      <tr><td>Renewable Capacity (MW)</td><td>15,779 MW</td><td>24,460 MW</td><td><span class="tag-up">↑ +55%</span></td></tr>
+      <tr><td>Per Capita Income</td><td>~₹2.1L</td><td>₹3.62L (1.77× national avg)</td><td><span class="tag-up">↑ Strong</span></td></tr>
+      <tr><td>Unemployment Rate</td><td>5.1% (2021–22)</td><td>3.5%</td><td><span class="tag-up">↓ Falling</span></td></tr>
+      <tr><td>Revenue Deficit (₹ crore)</td><td>Lower</td><td>₹45,121 Cr</td><td><span class="tag-down">↓ Worsened 71.5% above plan</span></td></tr>
+      <tr><td>Debt-to-GSDP Ratio</td><td>24.35%</td><td>~28%</td><td><span class="tag-warn">→ Elevated but stabilising</span></td></tr>
+      <tr><td>Avg. Inflation vs India</td><td>TN +0.85pp above</td><td>Gap narrowing</td><td><span class="tag-warn">→ Improving</span></td></tr>
+      <tr><td>SDG Index Score</td><td>66 (2018 baseline)</td><td>78 · 3rd in India</td><td><span class="tag-up">↑ +12 points</span></td></tr>
+      <tr><td>Human Development Index</td><td>~0.71</td><td>0.751</td><td><span class="tag-up">↑ High HD Category</span></td></tr>
+      <tr><td>Higher Education GER</td><td>~44%</td><td>47% · #1 in India</td><td><span class="tag-up">↑ Leads nation</span></td></tr>
+      <tr><td>Multidimensional Poverty</td><td>~4%</td><td>1.43%</td><td><span class="tag-up">↓ Near elimination</span></td></tr>
+      <tr><td>Child Stunting</td><td>27% (NFHS-4)</td><td>25% (NFHS-5)</td><td><span class="tag-up">↓ Improving</span></td></tr>
+      <tr><td>Child Wasting</td><td>20% (NFHS-4)</td><td>15% (NFHS-5)</td><td><span class="tag-up">↓ Strong drop</span></td></tr>
+      <tr><td>Maternal Mortality Ratio</td><td>97 (2007–09)</td><td>60 · Below SDG target</td><td><span class="tag-up">↓ Strong long-run decline</span></td></tr>
+      <tr><td>Women's Anaemia</td><td>~55%</td><td>53.4%</td><td><span class="tag-warn">→ Still very high</span></td></tr>
+      <tr><td>C-Section Rate</td><td>~40%</td><td>44.3%</td><td><span class="tag-down">↑ 3× WHO limit</span></td></tr>
+    </tbody>
+  </table>
+
+</main>
+
+<!-- SOURCES -->
+<div class="sources-section">
+  <div class="container">
+    <div class="sources-title">Sources &amp; References</div>
+    <ul class="sources-list">
+      <li><a href="https://thefederal.com/category/states/south/tamil-nadu/tamil-nadu-economic-survey-decade-high-growth-2024-256-230255" target="_blank">Tamil Nadu Economic Survey 2024–25 — The Federal (Feb 2026)</a></li>
+      <li><a href="https://statisticstimes.com/economy/india/tamil-nadu-economy.php" target="_blank">Economy of Tamil Nadu — StatisticsTimes.com</a></li>
+      <li><a href="https://www.ibef.org/states/tamil-nadu-presentation" target="_blank">Tamil Nadu State Profile — IBEF (India Brand Equity Foundation)</a></li>
+      <li><a href="https://www.ibef.org/states/tamil-nadu" target="_blank">Tamil Nadu Economy Overview — IBEF FY26</a></li>
+      <li><a href="https://www.niti.gov.in/sites/default/files/2025-03/Macro-and-Fiscal-Landscape-of-the-State-of-Tamil-Nadu.pdf" target="_blank">Macro &amp; Fiscal Landscape of Tamil Nadu — NITI Aayog (March 2025)</a></li>
+      <li><a href="https://prsindia.org/budgets/states/tamil-nadu-budget-analysis-2024-25" target="_blank">Tamil Nadu Budget Analysis 2024–25 — PRS India</a></li>
+      <li><a href="https://www.usthadian.com/tamil-nadu-debt-and-fiscal-trends-2025/" target="_blank">Tamil Nadu Debt &amp; Fiscal Trends — CAG Report Summary (2025)</a></li>
+      <li><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2032859" target="_blank">SDG India Index 2023–24 — NITI Aayog / PIB</a></li>
+      <li><a href="https://ruralindiaonline.org/en/library/resource/national-family-health-survey-nfhs-5-2019-21-tamil-nadu/" target="_blank">NFHS-5 Tamil Nadu (2019–21) — IIPS / Ministry of Health</a></li>
+      <li><a href="https://www.tnpscthervupettagam.com/articles-detail/national-family-health-survey-2019-21-on-tamilnadu-nfhs-5-part-01" target="_blank">NFHS-5 Tamil Nadu Summary — TNPSC Thervupettagam</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/List_of_districts_in_Tamil_Nadu_by_Human_Development_Index" target="_blank">Tamil Nadu HDI by District — Wikipedia / State Planning Commission</a></li>
+      <li><a href="https://www.researchgate.net/publication/371460572_EXPLORING_THE_DYNAMICS_OF_HUMAN_DEVELOPMENT_IN_TAMIL_NADU" target="_blank">Dynamics of HDI in Tamil Nadu — ResearchGate / IIPS (2022)</a></li>
+      <li><a href="http://tnenvis.nic.in/Database/Energy_1170.aspx" target="_blank">Renewable Energy — TNENVIS / Tamil Nadu ENVIS Centre</a></li>
+      <li><a href="https://ceda.ashoka.edu.in/here-is-what-nfhs-5-tells-us-about-india/" target="_blank">NFHS-5 Analysis — CEDA, Ashoka University</a></li>
+      <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12178503/" target="_blank">Maternal Mortality Trends in India — PMC / Journal of Family Medicine</a></li>
+      <li><a href="https://www.tnpscthervupettagam.com/articles-detail/economic-survey-of-tamil-nadu-2024-25" target="_blank">Economic Survey of Tamil Nadu 2024–25 Summary — TNPSC</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <span>Tamil Nadu Growth Reports · First published April 2026</span>
+  <span>Data compiled from NITI Aayog, IBEF, IIPS, CAG &amp; Government of Tamil Nadu</span>
+  <span>Next edition: 2030</span>
+</footer>
+
+<script>
+  // Progress bar
+  const bar = document.getElementById('progressBar');
+  window.addEventListener('scroll', () => {
+    const d = document.documentElement;
+    const pct = (d.scrollTop / (d.scrollHeight - d.clientHeight)) * 100;
+    bar.style.width = pct + '%';
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 40);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
